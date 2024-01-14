@@ -2,4 +2,4 @@ Welcome to Recipe Sharing App, the ultimate recipe-sharing app where you can eas
 
 But it's not just about recipes; we've made it interactive! Rate your favorite recipes, leave comments, and connect with other food lovers. Plus, create your account to save those recipes you can't get enough of.
 
-RecipeRendezvous is your friendly kitchen companion, making cooking more fun and tasty. Join us, share your favorites, and explore a world of flavors!
+This is your friendly kitchen companion, making cooking more fun and tasty. Join us, share your favorites, and explore a world of flavors!
