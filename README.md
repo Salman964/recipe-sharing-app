@@ -1,4 +1,4 @@
-Welcome to RecipeRendezvous, the ultimate recipe-sharing app where you can easily share and discover delicious recipes! Each recipe comes with all the details you need, like ingredients, instructions, and mouthwatering images.
+Welcome to Recipe Sharing App, the ultimate recipe-sharing app where you can easily share and discover delicious recipes! Each recipe comes with all the details you need, like ingredients, instructions, and mouthwatering images.
 
 But it's not just about recipes; we've made it interactive! Rate your favorite recipes, leave comments, and connect with other food lovers. Plus, create your account to save those recipes you can't get enough of.
 
