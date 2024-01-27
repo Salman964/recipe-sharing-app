@@ -1,0 +1,14 @@
+<!-- core/templates/core/recipe_detail.html -->
+<h2>{{ recipe.title }}</h2>
+<p>{{ recipe.description }}</p>
+<!-- Display other recipe details -->
+
+<!-- Display images associated with the recipe -->
+{% if recipe.images.all %}
+<h3>Images</h3>
+<div class="recipe-images">
+  {% for image in recipe.images.all %}
+  <img src="{{ image.image.url }}" alt="Recipe Image">
+  {% endfor %}
+</div>
+{% endif %}

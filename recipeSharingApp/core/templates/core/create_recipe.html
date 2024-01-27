@@ -1,0 +1,102 @@
+<!-- core/templates/core/create_recipe.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Recipe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 20px;
+    }
+
+    h2 {
+      color: #343a40;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .image-upload-container {
+      margin-bottom: 15px;
+    }
+
+    .image-preview {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Create Recipe</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <!-- Container for the image upload input -->
+    <div class="image-upload-container">
+      <label for="{{ formset.forms.0.image.id_for_label }}">Upload Image:</label>
+      {{ formset.forms.0.image }}
+      {% if formset.forms.0.instance.image and formset.forms.0.instance.image.url %}
+      <img src="{{ formset.forms.0.instance.image.url }}" alt="Recipe Image" class="image-preview">
+      {% endif %}
+    </div>
+
+    <!-- Formset for multiple images -->
+    {{ formset.management_form }}
+    {% for form in formset %}
+    <div class="image-upload-container">
+      <label for="{{ form.image.id_for_label }}">Upload Image:</label>
+      {{ form.image }}
+      {% if form.instance.image and form.instance.image.url %}
+      <img src="{{ form.instance.image.url }}" alt="Recipe Image" class="image-preview">
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Other form fields -->
+    {{ form.as_p }}
+
+    <button type="submit">Create Recipe</button>
+  </form>
+
+</body>
+
+</html>
